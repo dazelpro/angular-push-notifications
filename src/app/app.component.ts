@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { SwPush } from '@angular/service-worker';
 import { PushNotificationService } from './push-notification.service';
 
-const VAPID_PUBLIC = 'BA3Y4EMn38L71aOBPJgtL9PQSsFldcAZXURzYwmaMxDpbmfmpV7ps0B4CEHUmVGxWdW0iPfKSO2nRlXCTwFmiQA'
+const VAPID_PUBLIC = 'BLP7lrV5IUml-xrLeIT7k7J4vSKf32SP9-DksL_fRcx0dT4ECLG6kL-WEl-etVYCviIsYlbxrddsmwgK6jNG8cE'
 
 @Component({
     selector: 'app-root',
