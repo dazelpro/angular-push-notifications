@@ -1,0 +1,32 @@
+.container {
+    text-align: center;
+}
+.container > img {
+    width: 80px;
+}
+.header {
+    font-size: 22px;
+}
+.sub-header {
+    font-size: 12px;
+    display: block;
+    padding-bottom: 20px;
+}
+.input {
+    background-color: #013440;
+    color: white;
+    border: 0;
+    padding: 1.5rem 1.5rem;
+    font-size: 16px;
+    width: 300px;
+    border-radius: .25rem;
+}
+.button {
+    background: #0A96A6;
+    border: 2px solid #0A96A6;
+    border-radius: 5px;
+    padding: 1rem 3rem;
+    color: #FFF;
+    margin-top: 10px;
+    font-size: 16px;
+}
