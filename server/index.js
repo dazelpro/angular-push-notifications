@@ -21,6 +21,14 @@ app.post('/subscription', (req, res) => {
     console.log(fakeDatabase)
 })
 
+app.get('/subscriber', (req, res) => {
+    res.send({ 
+        success: true, 
+        message: 'Berhasil ambil data!',
+        data: fakeDatabase
+    });
+})
+
 app.post('/sendNotification', (req, res) => {
     const notificationPayload = {
         notification: {
