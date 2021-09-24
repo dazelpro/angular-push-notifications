@@ -4,12 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
 import { GreetingComponent } from './greeting/greeting.component';
+import { AuthService } from './auth.service';
+import { AnonymService } from './anonym.service';
 
 const appRoutes: Routes = [
-    { path: '',     component:  AuthComponent },
-    { path: 'home',  component:  HomeComponent},
-    { path: 'greeting',  component:  GreetingComponent},
-    { path: '**',   redirectTo: ''}
+    { path: 'auth', component: AuthComponent, canActivate: [AnonymService] },
+    { path: 'home', component: HomeComponent, canActivate: [AuthService] },
+    { path: 'greeting', component: GreetingComponent, canActivate: [AuthService] },
+    { path: '**', redirectTo: 'auth' }
 ];
 
 @NgModule({

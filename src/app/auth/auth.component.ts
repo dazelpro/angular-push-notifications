@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-auth',
@@ -9,14 +10,18 @@ export class AuthComponent implements OnInit {
 
     name;
 
-    constructor() { }
+    constructor(
+        private router : Router,
+    ) { }
 
     ngOnInit(): void {
     }
 
     login() {
         if (this.name) {
+            console.log(this.name)
             localStorage.setItem('userName', this.name);
+            this.router.navigate(['/home']);
         }
     }
 
