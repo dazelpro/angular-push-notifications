@@ -16,9 +16,10 @@ app.use(bodyParser.json())
 webpush.setVapidDetails('mailto:dazelpro@gmail.com', PUBLIC_VAPID, PRIVATE_VAPID)
 
 app.post('/subscription', (req, res) => {
-    const subscription = req.body
-    fakeDatabase.push(subscription)
-    console.log(fakeDatabase)
+    // const subscription = req.body
+    // fakeDatabase.push(subscription)
+    console.log('woyS')
+    console.log(req.body)
 })
 
 app.get('/subscriber', (req, res) => {

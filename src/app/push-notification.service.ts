@@ -10,8 +10,10 @@ export class PushNotificationService {
 
     constructor(private http: HttpClient) { }
 
-    public sendSubscriptionToTheServer(subscription: PushSubscription) {
-        return this.http.post(SERVER_URL+'subscription', subscription)
+    public sendSubscriptionToTheServer(subscription) {
+        let user = localStorage.getItem('userName')
+        let subscriber = {subscription,user: user}
+        return this.http.post(SERVER_URL+'subscription', subscriber)
     }
 
     getDataSubscriber() {

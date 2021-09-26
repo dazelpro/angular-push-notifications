@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit {
         private pushService: PushNotificationService,
         swPush: SwPush,
     ) {
-        this.name = localStorage.getItem('userName')
         if (swPush.isEnabled) {
             swPush
                 .requestSubscription({
@@ -24,7 +23,7 @@ export class HomeComponent implements OnInit {
                 .then(subscription => {
                     // send subscription to the server
                     pushService.sendSubscriptionToTheServer(subscription).subscribe()
-                    console.log('Hei ' + subscription)
+                    console.log(subscription['endpoint'])
                 })
                 .catch(console.error)
         }
