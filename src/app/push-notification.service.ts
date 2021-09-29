@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-const urlBE = 'http://localhost:8000/'
-// const urlBE = 'https://apps.dazelpro.com/'
+// const urlBE = 'http://localhost:8000/'
+const urlBE = 'https://apps.dazelpro.com/'
 @Injectable({
     providedIn: 'root'
 })
