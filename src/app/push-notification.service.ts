@@ -20,6 +20,10 @@ export class PushNotificationService {
         return this.http.get(`${urlBE}api/notifications/subsriber`);
     }
 
+    checkDataSubscriber(data) {
+        return this.http.post(`${urlBE}api/notifications/subsriber`, data);
+    }
+
     sendNotif(data) {
         return this.http.post(`${urlBE}api/notifications/send-notif`, data)
     }

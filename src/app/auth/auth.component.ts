@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PushNotificationService } from '../push-notification.service';
 
 @Component({
     selector: 'app-auth',
@@ -11,17 +12,25 @@ export class AuthComponent implements OnInit {
     name;
 
     constructor(
-        private router : Router,
+        private router: Router,
+        private pushService: PushNotificationService,
     ) { }
 
     ngOnInit(): void {
     }
 
-    login() {
+    async login() {
         if (this.name) {
-            console.log(this.name)
-            localStorage.setItem('userName', this.name);
-            this.router.navigate(['/home']);
+            // await this.pushService.checkDataSubscriber({ name: this.name }).subscribe(async (data) => {
+            //     if (data['user'].length === 0) {
+                    localStorage.setItem('userName', this.name);
+                    this.router.navigate(['/home']);
+            //     } else {
+            //         console.log('masukan user yang')
+            //     }
+            // }, (err) => {
+            //     console.log(err)
+            // });
         }
     }
 
